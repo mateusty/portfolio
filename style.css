@@ -1,13 +1,46 @@
+:root {
+    --shade-1: #141414;
+    --shade-2: #444444;
+    --shade-3: #979797;
+    --shade-4: #d6d6d6;
+    --accent-color: #0A66E0;
+    --accent-hover: #2B7FFF;
+    --accent-active: #0041A8;
+    --accent-disabled: #5A5F6A;
+    --disabled-text: #8A8F98;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: "Poppins", system-ui;
+    color: var(--shade-4);
 }
+
 
 body {
     height: 100vh;
     overflow: hidden;
+}
+
+#ola {
+    color: var(--shade-4);
+}
+
+.introducao {
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: var(--shade-1);
+    display: grid;
+    place-items: center;
+    transition: 0.3s ease-in-out;
+}
+
+.introducao.fade {
+    transform: translateY(100%);
 }
 
 main {
@@ -23,38 +56,39 @@ main::-webkit-scrollbar {
 }
 
 .nav {
-    overflow: hidden;
     z-index: 10;
     display: flex;
-    justify-content: space-around;
-    width: 20rem;
-    height: 4rem;
+    justify-content: space-evenly;
     position: fixed;
     left: 50%;
     top: 90%;
     translate: -50% -50%;
-    background-color: #00000020;
-    border-radius: 10rem;
-    border: 1px solid #00000050;
 }
 
 .nav a {
     all: unset;
     display: inline-block;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    color: #000000;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    background-color: var(--accent-hover);
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    margin: 0.25rem;
+    transition: 0.3s ease-in-out;
 }
 
 .nav a.ativo {
-    background-color: #00000050;
+    transform: scale(1.5);
+    background-color: color-mix(in srgb, var(--accent-color), transparent 50%);
 }
+
+.nav a.ativo ~ a {
+    transform: translateX(4px);
+}
+
+.nav:has(a.ativo) a:not(.ativo):not(.nav a.ativo ~ a) {
+    transform: translateX(-4px);
+}
+
 
 section {
     scroll-snap-align: center;
@@ -63,4 +97,16 @@ section {
     height: 100vh;
     position: relative;
     overflow: hidden;
+    background-color: var(--shade-2);
+}
+
+.autoShow {
+    opacity: 0;
+    transform: translateY(200px);
+}
+
+.show {
+    transition: 0.5s ease-out;
+    opacity: 1;
+    transform: translateY(0);
 }
