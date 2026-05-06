@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", system-ui;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+main {
+    display: flex;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    scrollbar-width: none;
+    position: relative;
+}
+main::-webkit-scrollbar {
+    display: none; 
+}
+
+.nav {
+    overflow: hidden;
+    z-index: 10;
+    display: flex;
+    justify-content: space-around;
+    width: 20rem;
+    height: 4rem;
+    position: fixed;
+    left: 50%;
+    top: 90%;
+    translate: -50% -50%;
+    background-color: #00000020;
+    border-radius: 10rem;
+    border: 1px solid #00000050;
+}
+
+.nav a {
+    all: unset;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #000000;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.nav a.ativo {
+    background-color: #00000050;
+}
+
+section {
+    scroll-snap-align: center;
+    flex: 0 0 auto;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
