@@ -36,15 +36,15 @@ body {
     background-color: var(--shade-1);
     display: grid;
     place-items: center;
-    transition: 0.3s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
 .introducao.fade {
-    transform: translateY(-100%);
+    transform: translateX(-100%);
 }
 
 .introducao-main {
-    transform: translateY(100%);
+    transform: translateX(100%);
 }
 
 main {
@@ -54,7 +54,7 @@ main {
     overflow-x: auto;
     scrollbar-width: none;
     position: relative;
-    transition: 0.3s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 main::-webkit-scrollbar {
     display: none; 
@@ -159,6 +159,7 @@ section::after {
     display: inline-block;
     background-color: var(--accent-color);
     mask-image: url(./assets/github-brands-solid-full.svg);
+    -webkit-mask-image: url(./assets/github-brands-solid-full.svg);
     mask-size: contain;
     width: 2rem;
     height: 2rem;
@@ -169,6 +170,7 @@ section::after {
     display: inline-block;
     background-color: var(--accent-color);
     mask-image: url(./assets/square-linkedin-brands-solid-full.svg);
+    -webkit-mask-image: url(./assets/square-linkedin-brands-solid-full.svg);
     mask-size: contain;
     width: 2rem;
     height: 2rem;
@@ -179,6 +181,7 @@ section::after {
     display: inline-block;
     background-color: var(--accent-color);
     mask-image: url(./assets/at-solid-full.svg);
+    -webkit-mask-image: url(./assets/at-solid-full.svg);
     mask-size: contain;
     width: 2rem;
     height: 2rem;
