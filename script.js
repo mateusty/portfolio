@@ -1,5 +1,25 @@
+const root = document.documentElement;
 const main = document.querySelector('main');
 const introducao = ['Hola!', 'Bonjour!', 'Ciao!', 'Nǐ hǎo!', 'こんにちは!', 'Olá!', false]
+
+
+function toggleLightMode() {
+    let rs = getComputedStyle(root);
+    const isDark = rs.getPropertyValue('--shade-1').trim() === '#141414';
+
+    if( isDark ) {
+        root.style.setProperty('--shade-1', '#d6d6d6')
+        root.style.setProperty('--shade-2', '#979797')
+        root.style.setProperty('--shade-3', '#444444')
+        root.style.setProperty('--shade-4', '#141414')
+    }
+    else {
+        root.style.setProperty('--shade-1', '#141414')
+        root.style.setProperty('--shade-2', '#444444')
+        root.style.setProperty('--shade-3', '#979797')
+        root.style.setProperty('--shade-4', '#d6d6d6')
+    }
+}
 
 function scrollporSecao(prox) {
     const larguraSecao = prox ? window.innerWidth : -window.innerWidth;

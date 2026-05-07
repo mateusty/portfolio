@@ -60,6 +60,31 @@ main::-webkit-scrollbar {
     display: none; 
 }
 
+.toggleMode {
+    all: unset;
+    z-index: 10;
+    position: absolute;
+    right: 2.5%;
+    top: 10%;
+    cursor: pointer;
+    background-color: var(--accent-color);
+    translate: -50% -50%;
+    display: inline-block;
+    mask-image: url(./assets/circle-half-stroke-solid-full.svg);
+    mask-size: contain;
+    width: 2rem;
+    height: 2rem;
+    transition: 0.3s ease;
+}
+
+.toggleMode:hover {
+    background-color: var(--accent-hover);
+}
+
+.toggleMode:active {
+    background-color: var(--accent-active);
+}
+
 .nav {
     z-index: 10;
     display: flex;
@@ -159,7 +184,6 @@ section::after {
     display: inline-block;
     background-color: var(--accent-color);
     mask-image: url(./assets/github-brands-solid-full.svg);
-    -webkit-mask-image: url(./assets/github-brands-solid-full.svg);
     mask-size: contain;
     width: 2rem;
     height: 2rem;
@@ -170,7 +194,6 @@ section::after {
     display: inline-block;
     background-color: var(--accent-color);
     mask-image: url(./assets/square-linkedin-brands-solid-full.svg);
-    -webkit-mask-image: url(./assets/square-linkedin-brands-solid-full.svg);
     mask-size: contain;
     width: 2rem;
     height: 2rem;
@@ -181,7 +204,6 @@ section::after {
     display: inline-block;
     background-color: var(--accent-color);
     mask-image: url(./assets/at-solid-full.svg);
-    -webkit-mask-image: url(./assets/at-solid-full.svg);
     mask-size: contain;
     width: 2rem;
     height: 2rem;
