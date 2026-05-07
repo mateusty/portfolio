@@ -1,6 +1,16 @@
 const main = document.querySelector('main');
 const introducao = ['Hola!', 'Bonjour!', 'Ciao!', 'Nǐ hǎo!', 'こんにちは!', 'Olá!', false]
 
+const dictEng = {
+    myName: `I'm <span class="highlight-text">Mateus Tamaki</span>,`,
+    role: "Full-Stack Developer"
+}
+
+const dictPt = {
+    myName: `Sou <span class="highlight-text">Mateus Tamaki</span>,`,
+    role: "Desenvolvedor Full-Stack"
+}
+
 
 function toggleLightMode() {
     const isDark = localStorage.getItem('isDark') === 'true';
@@ -18,6 +28,23 @@ function toggleLightMode() {
         root.style.setProperty('--shade-3', '#979797')
         root.style.setProperty('--shade-4', '#d6d6d6')
         localStorage.setItem('isDark', true)
+    }
+}
+
+function toggleLanguage() {
+    const isEnglish = localStorage.getItem('isEnglish') === 'true';
+
+    if( isEnglish ) {
+        Object.entries(dictPt).forEach(([key, value]) => {
+            document.getElementById(key).innerHTML = value;
+        });
+        localStorage.setItem('isEnglish', false);
+    }
+    else {
+        Object.entries(dictEng).forEach(([key, value]) => {
+            document.getElementById(key).innerHTML = value;
+        });
+        localStorage.setItem('isEnglish', true);
     }
 }
 
@@ -77,6 +104,8 @@ window.addEventListener('keydown', e => {
 })
 
 window.addEventListener('DOMContentLoaded', e => {
+    toggleLanguage();
+    toggleLanguage();
     setTimeout(i => {
         introducao.forEach((intr, index) => {
             setTimeout(e => {

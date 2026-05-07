@@ -33,7 +33,10 @@
     </div>
 
     <main class="introducao-main">
-        <button onclick="toggleLightMode()" class="autoShow fast toggleMode"></button>
+        <div id="toggle-container">
+            <button onclick="toggleLightMode()" class="autoShow fast toggleMode"></button>
+            <button onclick="toggleLanguage()" class="autoShow fast toggleLanguage"></button>
+        </div>
 
         <nav class="nav">
             <a href="#1"></a>
@@ -43,17 +46,17 @@
         
         <section class="inicio" id="1">
             <div class="text-intro">
-                <h1 class="autoShow fast">
+                <h1 class="autoShow fast" id="myName">
                     Sou <span class="highlight-text">Mateus Tamaki</span>,
                 </h1>
-                <h3 class="autoShow medium">
+                <h3 class="autoShow medium" id="role">
                     Desenvolvedor Full-Stack
                 </h3>
                 <div class="links">   <a href="https://github.com/mateusty" target="_blank" id="github" class="autoShow slow"></a> 
                                                     <a href="https://www.linkedin.com/in/mateus-tamaki-b5826936a/" target="_blank" id="linkedin" class="autoShow slow"></a> 
                                                     <a href="mailto:mateustamaki43@gmail.com" id="email" class="autoShow slow"></a></div>
             </div>
-
+            
             <img src="./assets/picture-temp.png" alt="Foto" class="autoShow medium picture">
         </section>
 
