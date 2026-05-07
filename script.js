@@ -4,20 +4,21 @@ const introducao = ['Hola!', 'Bonjour!', 'Ciao!', 'Nǐ hǎo!', 'こんにちは!
 
 
 function toggleLightMode() {
-    let rs = getComputedStyle(root);
-    const isDark = rs.getPropertyValue('--shade-1').trim() === '#141414';
+    const isDark = localStorage.getItem('isDark') === 'true';
 
     if( isDark ) {
         root.style.setProperty('--shade-1', '#d6d6d6')
         root.style.setProperty('--shade-2', '#979797')
         root.style.setProperty('--shade-3', '#444444')
         root.style.setProperty('--shade-4', '#141414')
+        localStorage.setItem('isDark', false)
     }
     else {
         root.style.setProperty('--shade-1', '#141414')
         root.style.setProperty('--shade-2', '#444444')
         root.style.setProperty('--shade-3', '#979797')
         root.style.setProperty('--shade-4', '#d6d6d6')
+        localStorage.setItem('isDark', true)
     }
 }
 

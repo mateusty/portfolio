@@ -6,7 +6,28 @@
     <script src="./script.js" defer></script>
     <link rel="stylesheet" href="./style.css">
     <title>Portfolio</title>
+    <!-- Carrega a preferência de tema do usuário -->
+    
+    <script>
+        (function () {
+            const isDark = localStorage.getItem('isDark') === 'true';
+            const root = document.documentElement;
+
+            if (isDark) {
+                root.style.setProperty('--shade-1', '#141414')
+                root.style.setProperty('--shade-2', '#444444')
+                root.style.setProperty('--shade-3', '#979797')
+                root.style.setProperty('--shade-4', '#d6d6d6')
+            } else {
+                root.style.setProperty('--shade-1', '#d6d6d6')
+                root.style.setProperty('--shade-2', '#979797')
+                root.style.setProperty('--shade-3', '#444444')
+                root.style.setProperty('--shade-4', '#141414')
+            }
+        })();
+    </script>
 </head>
+
 <body>
 
     <div class="introducao">
