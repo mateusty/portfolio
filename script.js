@@ -1,4 +1,3 @@
-const root = document.documentElement;
 const main = document.querySelector('main');
 const introducao = ['Hola!', 'Bonjour!', 'Ciao!', 'Nǐ hǎo!', 'こんにちは!', 'Olá!', false]
 
