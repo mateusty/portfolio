@@ -50,6 +50,7 @@ window.addEventListener('wheel', e => {
 }, { passive: false })
 
 window.addEventListener('keydown', e => {
+    if (e.repeat) return;
     if(e.key === "ArrowLeft" || e.key === "ArrowRight") {
         e.key === "ArrowLeft" ? scrollporSecao(false) : scrollporSecao(true);
     }

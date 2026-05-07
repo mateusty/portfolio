@@ -138,19 +138,6 @@ section::after {
     }
 }
 
-
-.inicio::after {
-    content: 'mateustamaki43@gmail.com';
-    display: flex;
-    align-items: flex-end;
-    padding-left: 5rem;
-    color: var(--accent-color);
-
-    @media (min-width: 768px) {
-        padding-left: 11.5%;
-    }
-}
-
 .card {
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 25px;
@@ -166,6 +153,48 @@ section::after {
 .text-intro h3 {
     font-weight: normal;
     line-height: 3rem;
+}
+
+#github {
+    display: inline-block;
+    background-color: var(--accent-color);
+    mask-image: url(./assets/github-brands-solid-full.svg);
+    mask-size: contain;
+    width: 2rem;
+    height: 2rem;
+    transition: 0.6s ease-out;
+}
+
+#linkedin {
+    display: inline-block;
+    background-color: var(--accent-color);
+    mask-image: url(./assets/square-linkedin-brands-solid-full.svg);
+    mask-size: contain;
+    width: 2rem;
+    height: 2rem;
+    transition: 0.7s ease-out;
+}
+
+#email {
+    display: inline-block;
+    background-color: var(--accent-color);
+    mask-image: url(./assets/at-solid-full.svg);
+    mask-size: contain;
+    width: 2rem;
+    height: 2rem;
+    transition: 0.8s ease-out;
+}
+
+#github:hover,
+#linkedin:hover,
+#email:hover {
+    background-color: var(--accent-hover);
+}
+
+#github:active,
+#linkedin:active,
+#email:active {
+    background-color: var(--accent-active);
 }
 
 .picture {
@@ -212,7 +241,7 @@ section::after {
 }
 
 .showSlow {
-    transition: 0.7s ease-out;
+    transition: 0.6s ease-out;
     opacity: 1;
     transform: translateY(0);
 }
@@ -224,7 +253,7 @@ section::after {
 }
 
 .showFast {
-    transition: 0.3s ease-out;
+    transition: 0.4s ease-out;
     opacity: 1;
     transform: translateY(0);
 }
