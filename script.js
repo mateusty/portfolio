@@ -1,5 +1,5 @@
 const main = document.querySelector('main');
-const introducao = ['Hello', 'こんにちは', 'Hola', 'Bonjour', 'Ciao', 'Nǐ hǎo', 'Olá', false]
+const introducao = ['Hola!', 'Bonjour!', 'Ciao!', 'Nǐ hǎo!', 'こんにちは!', 'Olá!', false]
 
 function scrollporSecao(prox) {
     const larguraSecao = prox ? window.innerWidth : -window.innerWidth;
@@ -21,11 +21,20 @@ const observer = new IntersectionObserver(entries => {
 
 const observerShow = new IntersectionObserver((entries) => {
     entries.forEach(el => {
-        if (el.isIntersecting) {
-            el.target.classList.add('show');
+        const intercessao = el.isIntersecting; 
+        if (intercessao && el.target.classList.contains('slow')) {
+            el.target.classList.add('showSlow');
+        }
+        else if (intercessao && el.target.classList.contains('medium')) {
+            el.target.classList.add('showMedium');
+        }
+        else if (intercessao && el.target.classList.contains('fast')) {
+            el.target.classList.add('showFast');
         }
         else {
-            el.target.classList.remove('show');
+            el.target.classList.remove('showSlow');
+            el.target.classList.remove('showMedium');
+            el.target.classList.remove('showFast');
         }
     });
 }, { threshold: 0.2 });
@@ -47,13 +56,17 @@ window.addEventListener('keydown', e => {
 })
 
 window.addEventListener('DOMContentLoaded', e => {
-    introducao.forEach((intr, index) => {
-        setTimeout(e => {
-            if(!intr) {
-                document.getElementsByClassName('introducao')[0].classList.add('fade')
-            } else {
-                document.getElementById('ola').innerText = `👋 ${intr}`
-            }
-        }, index * 300)
-    })
+    setTimeout(i => {
+        introducao.forEach((intr, index) => {
+            setTimeout(e => {
+                if(!intr) {
+                    document.getElementsByClassName('introducao')[0].classList.add('fade')
+                    main.classList.remove('introducao-main')
+                } else {
+                    document.getElementById('ola').innerText = `👋 ${intr}`
+                }
+            }, index * 250)
+        })
+    }, 500)
+    
 })
