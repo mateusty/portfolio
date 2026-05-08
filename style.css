@@ -182,7 +182,8 @@ section::after {
 .card, .card-container > .card {
     display: flex;
     flex-direction: column;
-    background-color: var(--shade-2);
+    background-color: #ffffff25;
+    box-shadow: 0 0 10px color-mix(in srgb, var(--shade-4), transparent 90%);
     border-radius: 15px;
 }
 
@@ -228,7 +229,7 @@ section::after {
 #github:hover,
 #linkedin:hover,
 #email:hover,
-.card-github-icon:active {
+.card-github-icon:hover {
     background-color: var(--accent-hover);
 }
 
@@ -282,11 +283,18 @@ section::after {
 
 .repo {
     padding: 2rem;
-    border: 1px solid var(--accent-color);
     height: 15rem;
     font-size: 1rem;
     flex-basis: 25%;
     flex-grow: 1;
+}
+
+.repo div h3 {
+    color: var(--shade-4);
+}
+
+.repo p {
+    color: var(--shade-3);
 }
 
 .repo > div, .repo > p {
