@@ -3,12 +3,14 @@ const introducao = ['Hola!', 'Bonjour!', 'Ciao!', 'Nǐ hǎo!', 'こんにちは!
 
 const dictEng = {
     myName: `I'm <span class="highlight-text">Mateus Tamaki</span>,`,
-    role: "Full-Stack Developer"
+    role: "Full-Stack Developer",
+    projects: `Some of my <span class="highlight-text">projects</span>:`
 }
 
 const dictPt = {
     myName: `Sou <span class="highlight-text">Mateus Tamaki</span>,`,
-    role: "Desenvolvedor Full-Stack"
+    role: "Desenvolvedor Full-Stack",
+    projects: `Alguns dos meus <span class="highlight-text">projetos</span>:`
 }
 
 
@@ -88,7 +90,6 @@ const observerShow = new IntersectionObserver((entries) => {
 
 
 sections.forEach(s => observer.observe(s));
-document.querySelectorAll('.autoShow').forEach(el => observerShow.observe(el));
 
 // const container = document.querySelector('main');
 window.addEventListener('wheel', e => {
@@ -106,6 +107,7 @@ window.addEventListener('keydown', e => {
 window.addEventListener('DOMContentLoaded', e => {
     toggleLanguage();
     toggleLanguage();
+    document.querySelectorAll('.autoShow').forEach(el => observerShow.observe(el));
     setTimeout(i => {
         introducao.forEach((intr, index) => {
             setTimeout(e => {
