@@ -14,7 +14,6 @@ async function loadRepoCards() {
     const cardContainer = document.querySelector('.card-container')
     
     repos = repos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at)).slice(0, 4);
-    console.log(repos);
 
     repos.forEach( (repo, index) => {
         const card = document.createElement('div');
@@ -35,4 +34,3 @@ async function loadRepoCards() {
     })
 }
 
-loadRepoCards();

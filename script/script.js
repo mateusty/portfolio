@@ -107,7 +107,11 @@ window.addEventListener('keydown', e => {
 window.addEventListener('DOMContentLoaded', e => {
     toggleLanguage();
     toggleLanguage();
-    document.querySelectorAll('.autoShow').forEach(el => observerShow.observe(el));
+
+    loadRepoCards().then(() => {
+        document.querySelectorAll('.autoShow').forEach(el => observerShow.observe(el))
+    })
+    
     setTimeout(i => {
         introducao.forEach((intr, index) => {
             setTimeout(e => {
