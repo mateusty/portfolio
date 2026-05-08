@@ -282,7 +282,6 @@ section::after {
 
 .repo {
     padding: 2rem;
-    align-items: center;
     border: 1px solid var(--accent-color);
     height: 15rem;
     font-size: 1rem;
