@@ -92,7 +92,7 @@ const observerShow = new IntersectionObserver((entries) => {
             el.target.classList.remove('showFast');
         }
     });
-}, {threshold: 0.2});
+}, {threshold: 0.1});
 
 
 sections.forEach(s => observer.observe(s));

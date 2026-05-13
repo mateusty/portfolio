@@ -295,17 +295,14 @@ section::after {
 }
 
 .project:hover h2 {
-    transform: translateX(5vw);
+    transform: translateX(2.5vw);
+    color: var(--accent-hover);
 }
 
 .project:hover h3 {
-    transform: translateX(-5vw);
-}
-
-.project:hover h2,
-.project:hover h3 {
+    transform: translateX(-2.5vw);
     color: var(--accent-color);
-} 
+}
 
 .fim {
     position: relative;
