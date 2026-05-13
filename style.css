@@ -179,14 +179,6 @@ section::after {
     }
 }
 
-.card, .card-container > .card {
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff25;
-    box-shadow: 0 0 10px color-mix(in srgb, var(--shade-4), transparent 90%);
-    border-radius: 15px;
-}
-
 .text-intro {
     display: grid;
 }
@@ -262,61 +254,58 @@ section::after {
 .project-text-container {
     display: grid;
     place-items: center;
-}
-
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 1rem;
-    gap: 1rem;
-}
-
-@media (max-width: 768px) {
-    .repo {
-        flex-basis: 50%;
-    } 
-    .card-container .repo:nth-child(3),
-    .card-container .repo:nth-child(4) {
-        display: none;
-    }
-}
-
-.repo {
-    padding: 2rem;
-    height: 15rem;
-    font-size: 1rem;
-    flex-basis: 25%;
-    flex-grow: 1;
-}
-
-.repo div h3 {
-    color: var(--shade-4);
-}
-
-.repo p {
-    color: var(--shade-3);
-}
-
-.repo > div, .repo > p {
     flex: 1;
 }
 
-.repo > div {
+.project {
+    all: unset;
+    display: block;
+    cursor: pointer;
+    width: 100vw;
+    height: 20vh;
+    margin-top: -1px;
+    border-top: 1px solid #ffffff50;
+    border-bottom: 1px solid #ffffff50;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-around;
 }
 
-.card-github-icon {
-    display: block;
-    background-color: var(--accent-color);
-    mask-image: url(./assets/github-brands-solid-full.svg);
-    mask-size: contain;
-    min-width: 2rem;
-    min-height: 2rem;
-    transition: 0.3s ease-out;
+.project h2 {
+    font-size: large;
+    @media (min-width: 640px) {
+        font-size: x-large;
+    }
 }
 
+.project h3 {
+    font-size: medium;
+    @media (min-width: 640px) {
+        font-size: larger;
+    }
+}
+
+.project h2,
+.project h3 {
+    transition: 0.3s ease;
+}
+
+.project:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 75%);
+}
+
+.project:hover h2 {
+    transform: translateX(5vw);
+}
+
+.project:hover h3 {
+    transform: translateX(-5vw);
+}
+
+.project:hover h2,
+.project:hover h3 {
+    color: var(--accent-color);
+} 
 
 .fim {
     position: relative;

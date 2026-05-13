@@ -4,13 +4,19 @@ const introducao = ['Hola!', 'Bonjour!', 'Ciao!', 'Nǐ hǎo!', 'こんにちは!
 const dictEng = {
     myName: `I'm <span class="highlight-text">Mateus Tamaki</span>,`,
     role: "Full-Stack Developer",
-    projects: `Some of my <span class="highlight-text">projects</span>:`
+    projects: `Some of my <span class="highlight-text">projects</span>:`,
+    mvp: `<h2>Games E-commerce</h2> <h3>Html/CSS/Javascript</h3>`,
+    poo: `<h2>Payroll System</h2> <h3>POO/Java</h3>`,
+    spring: `<h2>Restful API</h2> <h3>Springboot</h3>`
 }
 
 const dictPt = {
     myName: `Sou <span class="highlight-text">Mateus Tamaki</span>,`,
     role: "Desenvolvedor Full-Stack",
-    projects: `Alguns dos meus <span class="highlight-text">projetos</span>:`
+    projects: `Alguns dos meus <span class="highlight-text">projetos</span>:`,
+    mvp: `<h2>E-commerce de jogos</h2> <h3>Html/CSS/Javascript</h3>`,
+    poo: `<h2>Sistema de Folha de Pagamento</h2> <h3>POO/Java</h3>`,
+    spring: `<h2>API Restful</h2> <h3>Springboot</h3>`
 }
 
 
@@ -86,7 +92,7 @@ const observerShow = new IntersectionObserver((entries) => {
             el.target.classList.remove('showFast');
         }
     });
-}, { threshold: 0.2 });
+}, {threshold: 0.2});
 
 
 sections.forEach(s => observer.observe(s));
@@ -108,9 +114,7 @@ window.addEventListener('DOMContentLoaded', e => {
     toggleLanguage();
     toggleLanguage();
 
-    loadRepoCards().then(() => {
-        document.querySelectorAll('.autoShow').forEach(el => observerShow.observe(el))
-    })
+    document.querySelectorAll('.autoShow').forEach(el => observerShow.observe(el))
     
     setTimeout(i => {
         introducao.forEach((intr, index) => {
@@ -124,5 +128,4 @@ window.addEventListener('DOMContentLoaded', e => {
             }, index * 250)
         })
     }, 500)
-    
 })
